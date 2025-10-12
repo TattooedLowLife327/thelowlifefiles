@@ -37,9 +37,13 @@ export default function Sidebar({ open, setOpen }: Props) {
             active
               ? "bg-purple-700/80 text-white shadow-lg shadow-purple-900/30"
               : featured
-              ? "text-purple-300 hover:text-purple-200 hover:bg-purple-500/20 border border-purple-500/30"
+              ? "hover:bg-[#7c00e6]/20 border"
               : "text-white/80 hover:text-white hover:bg-white/10"
           }`}
+        style={featured ? {
+          color: '#a855f7',
+          borderColor: 'rgba(124, 0, 230, 0.4)'
+        } : undefined}
       >
         <span className={`text-sm font-medium ${featured ? "font-semibold" : ""}`}>{label}</span>
       </Link>
@@ -75,7 +79,7 @@ export default function Sidebar({ open, setOpen }: Props) {
           <nav className="flex flex-col gap-1.5 max-h-[calc(100vh-280px)] overflow-y-auto pr-1">
             {featuredPages.length > 0 && (
               <>
-                <div className="text-[10px] font-bold uppercase tracking-wider text-purple-400 mt-1 mb-1 px-2">
+                <div className="text-[10px] font-bold uppercase tracking-wider mt-1 mb-1 px-2" style={{ color: '#a855f7' }}>
                   Featured
                 </div>
                 {featuredPages.map((page) => (
@@ -133,7 +137,7 @@ export default function Sidebar({ open, setOpen }: Props) {
                 <nav className="flex flex-col gap-1.5">
                   {featuredPages.length > 0 && (
                     <>
-                      <div className="text-[10px] font-bold uppercase tracking-wider text-purple-400 mt-1 mb-1 px-2">
+                      <div className="text-[10px] font-bold uppercase tracking-wider mt-1 mb-1 px-2" style={{ color: '#a855f7' }}>
                         Featured
                       </div>
                       {featuredPages.map((page) => (
