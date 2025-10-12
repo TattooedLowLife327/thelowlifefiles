@@ -27,7 +27,7 @@ export default function Sidebar({ open, setOpen }: Props) {
     setOpen(false);
   }, [loc.pathname, setOpen]);
 
-  const NavLink = ({ to, label }: { to: string; label: string }) => {
+  const NavLink = ({ to, label, featured }: { to: string; label: string; featured?: boolean }) => {
     const active = loc.pathname === to;
     return (
       <Link
@@ -36,13 +36,18 @@ export default function Sidebar({ open, setOpen }: Props) {
           ${
             active
               ? "bg-purple-700/80 text-white shadow-lg shadow-purple-900/30"
+              : featured
+              ? "text-purple-300 hover:text-purple-200 hover:bg-purple-500/20 border border-purple-500/30"
               : "text-white/80 hover:text-white hover:bg-white/10"
           }`}
       >
-        <span className="text-sm font-medium">{label}</span>
+        <span className={`text-sm font-medium ${featured ? "font-semibold" : ""}`}>{label}</span>
       </Link>
     );
   };
+
+  const featuredPages = PAGES.filter(p => p.id === "p-twitch");
+  const regularPages = PAGES.filter(p => p.id !== "p-twitch");
 
   return (
     <>
@@ -68,7 +73,18 @@ export default function Sidebar({ open, setOpen }: Props) {
             Thee File Cabinet
           </Link>
           <nav className="flex flex-col gap-1.5 max-h-[calc(100vh-280px)] overflow-y-auto pr-1">
-            {PAGES.map((page) => (
+            {featuredPages.length > 0 && (
+              <>
+                <div className="text-[10px] font-bold uppercase tracking-wider text-purple-400 mt-1 mb-1 px-2">
+                  Featured
+                </div>
+                {featuredPages.map((page) => (
+                  <NavLink key={page.id} to={`/page/${page.id}`} label={page.name} featured />
+                ))}
+                <div className="h-px bg-white/10 my-2" />
+              </>
+            )}
+            {regularPages.map((page) => (
               <NavLink key={page.id} to={`/page/${page.id}`} label={page.name} />
             ))}
           </nav>
@@ -115,7 +131,18 @@ export default function Sidebar({ open, setOpen }: Props) {
                   </button>
                 </div>
                 <nav className="flex flex-col gap-1.5">
-                  {PAGES.map((page) => (
+                  {featuredPages.length > 0 && (
+                    <>
+                      <div className="text-[10px] font-bold uppercase tracking-wider text-purple-400 mt-1 mb-1 px-2">
+                        Featured
+                      </div>
+                      {featuredPages.map((page) => (
+                        <NavLink key={page.id} to={`/page/${page.id}`} label={page.name} featured />
+                      ))}
+                      <div className="h-px bg-white/10 my-2" />
+                    </>
+                  )}
+                  {regularPages.map((page) => (
                     <NavLink key={page.id} to={`/page/${page.id}`} label={page.name} />
                   ))}
                 </nav>
