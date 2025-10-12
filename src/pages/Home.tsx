@@ -127,25 +127,16 @@ export default function Home() {
               </button>
             <h1 className="mb-2 text-lg font-semibold sm:mb-3 sm:text-2xl">Overview</h1>
             <p className="text-[13px] leading-relaxed text-neutral-200 sm:text-sm">
-              The LowLife Files is a digital archive and interactive dossier built to document, verify, and expose three years of coordinated harassment, manipulation, and defamation within the online darts community.
+              The LowLife Files is a digital archive documenting three years of coordinated harassment, manipulation, and defamation within the online darts community.
             </p>
             <p className="text-[13px] leading-relaxed text-neutral-200 sm:text-sm mt-3">
-              Created by Mae Hensley (TattooedLowLife), the site serves as a transparent, organized record of factual evidence—messages, screenshots, recordings, and public posts—compiled to counter false narratives and hold accountable those who have targeted her and others in the Granboard scene.
+              Created by Mae Hensley (TattooedLowLife), this site provides factual evidence—messages, screenshots, recordings, and posts—to counter false narratives and hold accountable those who targeted her and others in the Granboard scene.
             </p>
             <p className="text-[13px] leading-relaxed text-neutral-200 sm:text-sm mt-3">
-              This platform isn't about revenge—it's about accountability, context, and truth. Each section in the sidebar presents direct proof, organized by incident and individual, with references to public discussions and supporting media. Every document shown has been vetted for authenticity and time-stamped to preserve accuracy.
+              This isn't about revenge—it's about accountability and truth. Use the sidebar to review evidence organized by incident and individual. Every document has been vetted for authenticity and time-stamped.
             </p>
-            <p className="text-[13px] leading-relaxed text-neutral-200 sm:text-sm mt-3 font-semibold">
-              Visitors can:
-            </p>
-            <ul className="text-[13px] leading-relaxed text-neutral-200 sm:text-sm list-disc list-inside ml-2">
-              <li>Review key events chronologically</li>
-              <li>Compare statements against verified evidence</li>
-              <li>Understand the scale and consistency of the harassment campaign</li>
-              <li>See the truth behind the accusations that circulated for years</li>
-            </ul>
-            <p className="text-[13px] leading-relaxed text-neutral-200 sm:text-sm mt-3">
-              Mae's message remains clear: silence only protects bullies. The LowLife Files is her way of reclaiming her narrative—and making sure the record reflects the truth, not the rumors.
+            <p className="text-[13px] leading-relaxed text-neutral-200 sm:text-sm mt-3 italic">
+              Silence only protects bullies. This is Mae's way of reclaiming her narrative and ensuring the record reflects truth, not rumors.
             </p>
           </div>
         </div>
