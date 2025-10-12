@@ -1,5 +1,3 @@
-const { getStore } = require("@netlify/blobs");
-
 const respond = (views) => ({
   statusCode: 200,
   headers: {
@@ -10,23 +8,19 @@ const respond = (views) => ({
 });
 
 exports.handler = async () => {
-  let store;
-
+  // Try to use Netlify Blobs if available
   try {
-    store = getStore("views");
-  } catch (error) {
-    // Missing blobs configuration (likely in local dev). Fall back to CountAPI.
-    return fetchFallbackCount();
-  }
+    const { getStore } = await import("@netlify/blobs");
+    const store = getStore("views");
 
-  try {
     let count = await store.get("pageviews");
     count = count ? parseInt(count, 10) : 0;
     count += 1;
     await store.set("pageviews", count.toString());
     return respond(count);
   } catch (error) {
-    // If blobs call fails for any reason, try fallback so UI still works.
+    console.log("Blobs not available, using fallback:", error.message);
+    // If blobs aren't configured or fail, use fallback
     return fetchFallbackCount();
   }
 };
@@ -40,7 +34,8 @@ async function fetchFallbackCount() {
       return respond(data.value);
     }
   } catch (error) {
-    // swallow and return zero – frontend will pad it.
+    console.log("Fallback count failed:", error.message);
   }
+  // Always return a valid response even if everything fails
   return respond(0);
 }
