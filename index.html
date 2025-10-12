@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+
+    <title>The LowLife Files</title>
+
+    <!-- PWA Meta -->
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="LowLife Files" />
+
+    <!-- Basic Meta -->
+    <meta name="title" content="The LowLife Files" />
+    <meta
+      name="description"
+      content="Don't worry, we have a screenshot for that."
+    />
+    <meta name="theme-color" content="#000000" />
+
+    <!-- Open Graph / Facebook / Messenger -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://thelowlifefiles.netlify.app/"
+    />
+    <meta property="og:title" content="The LowLife Files" />
+    <meta
+      property="og:description"
+      content="Don't worry, we have a screenshot for that."
+    />
+    <meta
+      property="og:image"
+      content="https://thelowlifefiles.netlify.app/Banner.png"
+    />
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:url"
+      content="https://thelowlifefiles.netlify.app/"
+    />
+    <meta name="twitter:title" content="The LowLife Files" />
+    <meta
+      name="twitter:description"
+      content="Don't worry, we have a screenshot for that."
+    />
+    <meta
+      name="twitter:image"
+      content="https://thelowlifefiles.netlify.app/Banner.png"
+    />
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/favicon-16x16.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="48x48"
+      href="/favicon-48x48.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/apple-touch-icon.png"
+    />
+    <link
+      rel="mask-icon"
+      href="/safari-pinned-tab.svg"
+      color="#000000"
+    />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- Structured Data (JSON-LD for Google) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "The LowLife Files",
+        "url": "https://thelowlifefiles.netlify.app/",
+        "description": "Don't worry, we have a screenshot for that.",
+        "publisher": {
+          "@type": "Organization",
+          "name": "The LowLife Files",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://thelowlifefiles.netlify.app/android-chrome-512x512.png"
+          }
+        },
+        "image": "https://thelowlifefiles.netlify.app/Banner.png",
+        "inLanguage": "en",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://thelowlifefiles.netlify.app/?s={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      }
+    </script>
+  </head>
+
+  <body class="bg-ink text-white">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
