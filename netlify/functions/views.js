@@ -8,21 +8,9 @@ const respond = (views) => ({
 });
 
 exports.handler = async () => {
-  // Try to use Netlify Blobs if available
-  try {
-    const { getStore } = await import("@netlify/blobs");
-    const store = getStore("views");
-
-    let count = await store.get("pageviews");
-    count = count ? parseInt(count, 10) : 0;
-    count += 1;
-    await store.set("pageviews", count.toString());
-    return respond(count);
-  } catch (error) {
-    console.log("Blobs not available, using fallback:", error.message);
-    // If blobs aren't configured or fail, use fallback
-    return fetchFallbackCount();
-  }
+  // Just use the fallback count API for now
+  // Netlify Blobs requires additional setup
+  return fetchFallbackCount();
 };
 
 async function fetchFallbackCount() {

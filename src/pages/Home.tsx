@@ -20,9 +20,21 @@ export default function Home() {
 
   useEffect(() => {
     fetch("/.netlify/functions/views")
-      .then((res) => res.json())
-      .then((data) => setViewCount(data.views))
-      .catch(() => setViewCount(0));
+      .then((res) => {
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        return res.json();
+      })
+      .then((data) => {
+        if (data && typeof data.views === 'number') {
+          setViewCount(data.views);
+        } else {
+          setViewCount(0);
+        }
+      })
+      .catch((err) => {
+        console.error('Failed to fetch view count:', err);
+        setViewCount(0);
+      });
   }, []);
 
   const clearTimers = useCallback(() => {
