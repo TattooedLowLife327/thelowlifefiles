@@ -17,20 +17,24 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-ink text-white">
-      {/* Hero Banner (no header overlay) */}
-      <section className="safe px-4 pt-4 lg:pl-[260px]">
-        <div className="relative mx-auto max-w-5xl lg:mx-0 lg:max-w-none lg:w-full">
-          <div className="flex h-[140px] items-center justify-center overflow-hidden rounded-3xl border border-white/10 bg-black/40 shadow-lg sm:h-[200px] md:h-[240px] lg:h-[260px] lg:rounded-none lg:shadow-none lg:border-0 lg:bg-transparent lg:overflow-hidden w-full">
-            <img
-              src="/Banner.png"
-              alt="The LowLife Files"
-              className="h-full w-full object-cover"
-            />
-          </div>
-          {/* subtle divider */}
-          <div className="mt-3 h-px w-full bg-white/10"></div>
-        </div>
-      </section>
+      {/* Hero Banner - Only on Home Page */}
+      <Routes>
+        <Route path="/" element={
+          <section className="safe px-4 pt-4 lg:pl-[260px]">
+            <div className="relative mx-auto max-w-5xl lg:mx-0 lg:max-w-none lg:w-full">
+              <div className="flex h-[140px] items-center justify-center overflow-hidden rounded-3xl border border-white/10 bg-black/40 shadow-lg sm:h-[200px] md:h-[240px] lg:h-[260px] lg:rounded-none lg:shadow-none lg:border-0 lg:bg-transparent lg:overflow-hidden w-full">
+                <img
+                  src="/Banner.png"
+                  alt="The LowLife Files"
+                  className="h-full w-full object-cover"
+                />
+              </div>
+              {/* subtle divider */}
+              <div className="mt-3 h-px w-full bg-white/10"></div>
+            </div>
+          </section>
+        } />
+      </Routes>
 
       {/* Sidebar */}
       <Sidebar open={open} setOpen={setOpen} />

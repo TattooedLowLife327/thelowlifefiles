@@ -19,15 +19,12 @@ export default function PageDetail() {
     <section>
       <div className="mx-auto flex w-full max-w-5xl flex-col gap-3.5 sm:gap-5">
         {/* Page Header */}
-        <div className="overflow-hidden rounded-xl sm:rounded-2xl border border-purple-400/40 bg-gradient-to-br from-purple-800/50 to-indigo-800/50 shadow-lg shadow-purple-700/20">
+        <div className="overflow-hidden">
           <img
             src={page.banner}
             alt={`${page.name} banner`}
-            className="h-32 sm:h-48 w-full object-cover"
+            className="h-32 sm:h-48 md:h-56 lg:h-64 w-full object-cover"
           />
-          <div className="p-4 sm:p-6">
-            <h1 className="text-xl font-bold sm:text-3xl text-white">{page.name}</h1>
-          </div>
         </div>
 
         {/* Players Section */}
