@@ -368,25 +368,25 @@ body {
 
 /* Opening animation: Paper rises UP and starts to expand */
 .overview-card.is-rise {
-  transform: translate(-50%, -180px) scale(0.65);
+  transform: translate(-50%, -230px) scale(0.45);
   opacity: 1;
 }
 
 /* Opening animation: Paper continues up and fully expands */
 .overview-card.is-settle {
-  transform: translate(-50%, -80px) scale(1.0);
+  transform: translate(-50%, -80px) scale(1);
   opacity: 1;
 }
 
 /* Closing animation: Paper starts shrinking */
 .overview-card.is-closing-up {
-  transform: translate(-50%, -90px) scale(0.95);
+  transform: translate(-50%, -100px) scale(0.9);
   opacity: 1;
 }
 
 /* Closing animation: Paper shrinks and moves up */
 .overview-card.is-closing-shrink {
-  transform: translate(-50%, -180px) scale(0.65);
+  transform: translate(-50%, -230px) scale(0.45);
   opacity: 1;
 }
 
@@ -400,7 +400,6 @@ body {
     transform 0.9s cubic-bezier(0.6, 0.04, 0.8, 0.8),
     opacity 0.9s ease-in;
 }
-
 
 
 
