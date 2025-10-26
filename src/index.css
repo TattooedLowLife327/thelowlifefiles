@@ -312,7 +312,7 @@ body {
   top: 0;
   left: 50%;
   width: min(100%, 38rem);
-  transform: translate(-50%, 120px) scale(0.4);
+  transform: translate(-50%, 30px) scale(0.4);
   transform-origin: 50% 0%;
   opacity: 0;
   pointer-events: none;
@@ -392,7 +392,7 @@ body {
 
 /* Closing animation: Paper drops back DOWN into drawer */
 .overview-card.is-closing-drop {
-  transform: translate(-50%, 120px) scale(0.4);
+  transform: translate(-50%, 30px) scale(0.4);
   opacity: 0;
   pointer-events: none;
   z-index: 1;
