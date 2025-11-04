@@ -2,12 +2,12 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import FileCabinet from "../components/FileCabinet";
 
 const DRAWER_OPEN_DURATION = 650;
-const CARD_RISE_DURATION = 700;
-const CARD_RISE_HOLD = 180;
+const CARD_RISE_DURATION = 650;
+const CARD_RISE_HOLD = 100;
 const CARD_SETTLE_DELAY = 0;
-const CARD_LIFT_DURATION = 900;
-const CARD_SHRINK_DURATION = 900;
-const CARD_DROP_DURATION = 900;
+const CARD_LIFT_DURATION = 800;
+const CARD_SHRINK_DURATION = 800;
+const CARD_DROP_DURATION = 800;
 
 type CardPhase = "hidden" | "rise" | "settle" | "closingLift" | "closingShrink" | "closingDrop";
 
