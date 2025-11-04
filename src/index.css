@@ -90,7 +90,6 @@ body {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  perspective: 1000px;
 }
 
 .cabinet-drawer {
@@ -144,7 +143,7 @@ body {
 
 .cabinet-drawer.interactive:focus-visible,
 .cabinet-drawer.is-open {
-  transform: translateY(-14px) scale(1.03) rotateX(-1deg);
+  transform: translateY(-14px) scale(1.03);
   box-shadow: 0 26px 40px rgba(0, 0, 0, 0.6);
   background-size: 200%;
   z-index: 1;
