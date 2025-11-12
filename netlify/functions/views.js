@@ -1,4 +1,5 @@
 const { getStore } = require("@netlify/blobs");
+const { fetch } = require("undici");
 
 const respond = (views) => ({
   statusCode: 200,
@@ -13,12 +14,14 @@ exports.handler = async () => {
   try {
     const store = await getStore({
       name: "view-counter",
+      // use local emulator when running `netlify dev`
       local: process.env.NETLIFY_DEV === "true",
-      consistency: "strong",
     });
 
     const rawCount = await store.get("count");
-    const currentCount = Number.parseInt(rawCount ?? "0", 10) || 0;
+    const currentCount = Number.isFinite(Number(rawCount))
+      ? Number(rawCount)
+      : Number.parseInt(rawCount ?? "0", 10) || 0;
     const nextCount = currentCount + 1;
 
     await store.set("count", String(nextCount));
