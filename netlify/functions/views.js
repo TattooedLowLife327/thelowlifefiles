@@ -1,4 +1,4 @@
-const { getStore } = require("@netlify/blobs");
+import { getStore } from "@netlify/blobs";
 
 const respond = (views) => ({
   statusCode: 200,
@@ -9,7 +9,7 @@ const respond = (views) => ({
   body: JSON.stringify({ views }),
 });
 
-exports.handler = async () => {
+export async function handler() {
   try {
     const store = await getStore({
       name: "view-counter",
@@ -28,4 +28,4 @@ exports.handler = async () => {
     console.error("View counter failed:", error);
     return respond(0);
   }
-};
+}
