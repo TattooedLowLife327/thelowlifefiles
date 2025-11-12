@@ -67,6 +67,9 @@ export default function Home() {
 
   const handleClose = useCallback(() => {
     if (cardPhase === "hidden" || cardPhase === "closingDrop") return;
+    if (document.activeElement instanceof HTMLElement) {
+      document.activeElement.blur();
+    }
     clearTimers();
     setCardPhase("closingLift");
     schedule(CARD_LIFT_DURATION, () => {
@@ -111,7 +114,7 @@ export default function Home() {
           <div
             id={overviewId}
             className={cardClasses.join(" ")}
-            aria-hidden={cardPhase === "hidden" || !cardVisible}
+            aria-hidden={cardPhase === "hidden"}
           >
               <button
                 type="button"
