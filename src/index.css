@@ -550,4 +550,5 @@ body {
 .parental-tip-trigger:hover .parental-tip {
   opacity: 1;
   transform: translateX(0) scale(1);
+  z-index: 5;
 }
