@@ -11,6 +11,7 @@ import Analysis from './pages/Analysis';
 import Privacy from './pages/Privacy';
 import Terms from './pages/Terms';
 import Contact from './pages/Contact';
+import Evidence from './pages/Evidence';
 
 const DISCLAIMER =
   "Disclaimer: The quality - or lack there of - of the display images used below are not a direct creation of TattooedLowLife. She would never put something that low quality out into the world.. but then again, the image quality is a direct representation of the quality of tournaments they put on.";
@@ -56,6 +57,7 @@ export default function App() {
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/terms" element={<Terms />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/evidence-policy" element={<Evidence />} />
           </Routes>
         </div>
       </main>

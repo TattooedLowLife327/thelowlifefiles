@@ -110,6 +110,12 @@ export default function Privacy() {
             documented behavior. Material is curated for accountability—republishing it for retaliation or harassment is
             prohibited and may be referred to authorities.
           </p>
+          <Link
+            to="/evidence-policy"
+            className="inline-flex items-center mt-2 rounded-full border border-white/10 px-4 py-1.5 text-xs uppercase tracking-wide text-white hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-300"
+          >
+            View Full Evidence Policy →
+          </Link>
         </section>
 
         <section>
