@@ -137,6 +137,13 @@ body {
   transform: translateY(-50%) rotate(5deg);
 }
 
+.cabinet-magnet-bottom-right {
+  top: 52%;
+  right: 12px;
+  width: 46px;
+  transform: translateY(-50%) rotate(-4deg);
+}
+
 .cabinet-drawer.interactive {
   cursor: pointer;
 }
@@ -400,6 +407,5 @@ body {
     transform 0.9s cubic-bezier(0.6, 0.04, 0.8, 0.8),
     opacity 0.9s ease-in;
 }
-
 
 
