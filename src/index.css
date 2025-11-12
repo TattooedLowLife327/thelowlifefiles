@@ -121,6 +121,7 @@ body {
   left: 10px;
   width: 50px;
   transform: rotate(-5deg);
+  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.35));
 }
 
 .cabinet-magnet-center {
@@ -128,6 +129,7 @@ body {
   right: 10px;
   transform: translateY(-50%) rotate(3deg);
   width: 50px;
+  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.35));
 }
 
 .cabinet-magnet-bottom-left {
@@ -135,6 +137,7 @@ body {
   left: 10px;
   width: 50px;
   transform: translateY(-50%) rotate(5deg);
+  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.35));
 }
 
 .cabinet-magnet-bottom-right {
@@ -142,6 +145,7 @@ body {
   right: 16px;
   width: 46px;
   transform: rotate(-6deg);
+  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.35));
 }
 
 .chrome-magnet {
@@ -163,9 +167,9 @@ body {
 
 .chrome-magnet.is-animating img {
   animation:
-    chromeSpin 1.6s ease-out forwards,
-    chromeGlow 0.8s ease-out forwards;
-  animation-delay: 0s, 1.6s;
+    chromeSpin 0.9s ease-out forwards,
+    chromeGlow 0.55s ease-out forwards;
+  animation-delay: 0s, 0.9s;
 }
 
 @keyframes chromeSpin {
@@ -506,6 +510,7 @@ body {
   width: 100%;
   height: auto;
   pointer-events: none;
+  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.35));
 }
 
 .parental-tip {
