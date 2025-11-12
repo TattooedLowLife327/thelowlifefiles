@@ -114,7 +114,7 @@ export default function Home() {
           <div
             id={overviewId}
             className={cardClasses.join(" ")}
-            aria-hidden={cardPhase === "hidden"}
+            aria-hidden={cardPhase === "hidden" || !cardVisible}
           >
               <button
                 type="button"
