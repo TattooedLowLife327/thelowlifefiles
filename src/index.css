@@ -493,3 +493,56 @@ body {
     transform 0.9s cubic-bezier(0.6, 0.04, 0.8, 0.8),
     opacity 0.9s ease-in;
 }
+.parental-tip-trigger {
+  background: none;
+  border: none;
+  padding: 0;
+  pointer-events: auto;
+  cursor: pointer;
+  display: inline-flex;
+}
+
+.parental-tip-trigger img {
+  width: 100%;
+  height: auto;
+  pointer-events: none;
+}
+
+.parental-tip {
+  position: absolute;
+  left: 110%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: min(220px, 60vw);
+  padding: 10px 14px;
+  border-radius: 14px;
+  background: rgba(8, 8, 14, 0.92);
+  color: #fff;
+  font-size: 10px;
+  letter-spacing: 0.04em;
+  line-height: 1.4;
+  text-transform: uppercase;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.45);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+.parental-tip::after {
+  content: "";
+  position: absolute;
+  left: -12px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-width: 8px;
+  border-style: solid;
+  border-color: transparent rgba(8, 8, 14, 0.92) transparent transparent;
+}
+
+.parental-tip-trigger:focus-visible .parental-tip,
+.parental-tip-trigger:active .parental-tip,
+.parental-tip-trigger:hover .parental-tip {
+  opacity: 1;
+  transform: translateY(-50%) translateX(4px);
+}
