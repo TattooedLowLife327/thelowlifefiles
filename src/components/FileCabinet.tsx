@@ -154,11 +154,9 @@ export default function FileCabinet({ topOpen, onTopToggle, overviewId, bottomCo
             aria-hidden="true"
           />
           <span className="parental-tip">
-            THE LOWLIFES OF GRANBOARD IS NOT RESPONSIBLE FOR ANY FEELINGS OF BEING CALLED OUT, SHOTS FIRED OR BRUISED EGOS.
-            IN THE EVENT YOU BEGIN BRINGING PERSONAL MATTERS INTO THIS, IT THEN OPENS THE DOORS FOR US TO DO THE SAME.
-            PROCEED WITH CAUTION.
+            THE LOWLIFES OF GRANBOARD IS NOT RESPONSIBLE FOR ANY FEELINGS OF BEING CALLED OUT, SHOTS FIRED, OR BRUISED EGOS.
           </span>
-        </button>
+       </button>
         <button
           type="button"
           className={`cabinet-magnet cabinet-magnet-bottom-right chrome-magnet ${isChromeMagnetActive ? "is-animating" : ""}`}
