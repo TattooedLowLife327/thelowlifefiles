@@ -4,7 +4,7 @@ type FileCabinetProps = {
   topOpen: boolean;
   onTopToggle: () => void;
   overviewId?: string;
-  bottomCounter?: string | number;
+  bottomCounter?: string;
 };
 
 export default function FileCabinet({ topOpen, onTopToggle, overviewId, bottomCounter }: FileCabinetProps) {
@@ -106,6 +106,11 @@ export default function FileCabinet({ topOpen, onTopToggle, overviewId, bottomCo
           src="/Parental-Advisory-PNG-Background.png"
           alt="Parental Advisory Explicit Content"
           className="cabinet-magnet cabinet-magnet-bottom-left"
+        />
+        <img
+          src="/chromemagnet.svg"
+          alt="Chrome magnet"
+          className="cabinet-magnet cabinet-magnet-bottom-right"
         />
         {bottomCounter !== undefined && (
           <div className="cabinet-counter">
