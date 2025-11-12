@@ -1,4 +1,4 @@
-import { KeyboardEvent } from "react";
+import { KeyboardEvent, useEffect, useRef, useState } from "react";
 
 type FileCabinetProps = {
   topOpen: boolean;
@@ -8,6 +8,47 @@ type FileCabinetProps = {
 };
 
 export default function FileCabinet({ topOpen, onTopToggle, overviewId, bottomCounter }: FileCabinetProps) {
+  const [isChromeMagnetActive, setChromeMagnetActive] = useState(true);
+  const [showChromeTip, setShowChromeTip] = useState(false);
+  const tipTimerRef = useRef<number | null>(null);
+
+  useEffect(() => {
+    const timer = window.setTimeout(() => setChromeMagnetActive(false), 1800);
+    return () => window.clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
+    return () => {
+      if (tipTimerRef.current) {
+        window.clearTimeout(tipTimerRef.current);
+      }
+    };
+  }, []);
+
+  const showTipTemporarily = () => {
+    if (tipTimerRef.current) {
+      window.clearTimeout(tipTimerRef.current);
+    }
+    setShowChromeTip(true);
+    tipTimerRef.current = window.setTimeout(() => setShowChromeTip(false), 2200);
+  };
+
+  const handleChromeClick = () => {
+    showTipTemporarily();
+  };
+
+  const handleChromeFocus = () => {
+    showTipTemporarily();
+  };
+
+  const handleChromeHover = (visible: boolean) => {
+    if (tipTimerRef.current) {
+      window.clearTimeout(tipTimerRef.current);
+      tipTimerRef.current = null;
+    }
+    setShowChromeTip(visible);
+  };
+
   const handleKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {
     if (!topOpen && (event.key === "Enter" || event.key === " ")) {
       event.preventDefault();
@@ -107,11 +148,19 @@ export default function FileCabinet({ topOpen, onTopToggle, overviewId, bottomCo
           alt="Parental Advisory Explicit Content"
           className="cabinet-magnet cabinet-magnet-bottom-left"
         />
-        <img
-          src="/chromemagnet.svg"
-          alt="Chrome magnet"
-          className="cabinet-magnet cabinet-magnet-bottom-right"
-        />
+        <button
+          type="button"
+          className={`cabinet-magnet cabinet-magnet-bottom-right chrome-magnet ${isChromeMagnetActive ? "is-animating" : ""}`}
+          onClick={handleChromeClick}
+          onFocus={handleChromeFocus}
+          onBlur={() => handleChromeHover(false)}
+          onMouseEnter={() => handleChromeHover(true)}
+          onMouseLeave={() => handleChromeHover(false)}
+          aria-label="Chrome magnet — tap for best browser tip"
+        >
+          <img src="/chromemagnet.svg" alt="" aria-hidden="true" />
+          <span className={`chrome-tip ${showChromeTip ? "is-visible" : ""}`}>Best viewed in Chrome</span>
+        </button>
         {bottomCounter !== undefined && (
           <div className="cabinet-counter">
             <div className="cabinet-counter-display">

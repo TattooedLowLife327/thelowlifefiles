@@ -111,9 +111,9 @@ body {
 .cabinet-magnet {
   position: absolute;
   height: auto;
-  pointer-events: none;
   filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.6));
   z-index: 3;
+  pointer-events: none;
 }
 
 .cabinet-magnet-left {
@@ -142,6 +142,92 @@ body {
   right: 16px;
   width: 46px;
   transform: rotate(-6deg);
+}
+
+.chrome-magnet {
+  background: none;
+  border: none;
+  padding: 0;
+  pointer-events: auto;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chrome-magnet img {
+  width: 100%;
+  height: auto;
+  pointer-events: none;
+}
+
+.chrome-magnet.is-animating img {
+  animation:
+    chromeSpin 1.6s ease-out forwards,
+    chromeGlow 0.8s ease-out forwards;
+  animation-delay: 0s, 1.6s;
+}
+
+@keyframes chromeSpin {
+  0% {
+    transform: rotate(-6deg) scale(1);
+  }
+  80% {
+    transform: rotate(720deg) scale(1.05);
+  }
+  100% {
+    transform: rotate(-6deg) scale(1);
+  }
+}
+
+@keyframes chromeGlow {
+  0% {
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.6));
+  }
+  50% {
+    filter:
+      drop-shadow(0 0 6px rgba(82, 196, 255, 0.9))
+      drop-shadow(0 4px 8px rgba(0, 0, 0, 0.6));
+  }
+  100% {
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.6));
+  }
+}
+
+.chrome-tip {
+  position: absolute;
+  bottom: calc(100% + 6px);
+  right: 0;
+  padding: 4px 9px;
+  border-radius: 999px;
+  background: rgba(8, 8, 14, 0.9);
+  color: #fff;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  pointer-events: none;
+  white-space: nowrap;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.chrome-tip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  right: 12px;
+  border-width: 6px;
+  border-style: solid;
+  border-color: rgba(8, 8, 14, 0.9) transparent transparent transparent;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4));
+}
+
+.chrome-tip.is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .cabinet-drawer.interactive {
