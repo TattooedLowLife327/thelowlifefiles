@@ -6,66 +6,96 @@ export default function Privacy() {
 
       <div className="space-y-3 text-sm leading-relaxed text-neutral-100">
         <section>
-          <h2 className="font-semibold uppercase tracking-wide text-xs text-neutral-400">1. What We Collect</h2>
+          <h2 className="font-semibold uppercase tracking-wide text-xs text-neutral-400">1. Scope and Purpose</h2>
           <p>
-            We automatically collect limited technical data from visitors: IP addresses, page requests, timestamps, and
-            browser/device details. The public view counter uses anonymized hashes, so no personal data is exposed there.
+            This policy governs the collection and use of information by The LowLife Files. We document harassment within the
+            Granboard community and collect limited technical data solely to ensure security, prevent abuse, and comply with
+            lawful obligations.
           </p>
         </section>
 
         <section>
-          <h2 className="font-semibold uppercase tracking-wide text-xs text-neutral-400">2. Why We Collect It</h2>
+          <h2 className="font-semibold uppercase tracking-wide text-xs text-neutral-400">2. Information We Collect</h2>
           <p>
-            The data is recorded to protect the site and its owner from harassment, spam, and coordinated abuse. It helps
-            identify repeated attacks and preserve evidence for legitimate investigations.
+            We automatically record IP addresses, page requests, timestamps, and browser/device details. No personal
+            identifiers are collected unless you email us directly. The public counter uses cryptographic hashing so no
+            identifiable data is exposed.
           </p>
         </section>
 
         <section>
-          <h2 className="font-semibold uppercase tracking-wide text-xs text-neutral-400">3. How It’s Stored</h2>
+          <h2 className="font-semibold uppercase tracking-wide text-xs text-neutral-400">3. Lawful Basis</h2>
           <p>
-            Logs are stored privately on Netlify Blobs. Access is restricted to TattooedLowLife. Entries are periodically
-            purged unless they are part of an ongoing investigation. Only aggregated, non-identifiable visit counts are shown
-            publicly.
+            Processing occurs under GDPR Article 6(1)(f) legitimate interest: maintaining security, investigating harassment,
+            preserving evidence, and complying with lawful requests.
           </p>
         </section>
 
         <section>
-          <h2 className="font-semibold uppercase tracking-wide text-xs text-neutral-400">4. Legal Basis</h2>
+          <h2 className="font-semibold uppercase tracking-wide text-xs text-neutral-400">4. Data Retention & Storage</h2>
           <p>
-            Data is processed under legitimate interest to maintain security, document harassment, and defend against
-            malicious activity.
+            Logs are stored in secure Netlify Blobs, encrypted at rest and transmitted via TLS. Access is limited to
+            TattooedLowLife. Entries are purged after a set period unless needed for an ongoing investigation. Public stats
+            remain aggregated and anonymous.
           </p>
         </section>
 
         <section>
-          <h2 className="font-semibold uppercase tracking-wide text-xs text-neutral-400">5. Sharing and Disclosure</h2>
+          <h2 className="font-semibold uppercase tracking-wide text-xs text-neutral-400">5. Sharing & Disclosure</h2>
           <p>
-            Information is shared only when required by law or when cooperating with investigations into harassment, abuse,
-            or fraud. We never sell or disclose this data to third parties for marketing.
+            We never sell or rent visitor data. Information may be disclosed only to comply with legal obligations, aid law
+            enforcement investigating harassment, or to trusted service providers operating under confidentiality agreements.
           </p>
         </section>
 
         <section>
-          <h2 className="font-semibold uppercase tracking-wide text-xs text-neutral-400">6. Cookies and Tracking</h2>
+          <h2 className="font-semibold uppercase tracking-wide text-xs text-neutral-400">6. International Transfers</h2>
           <p>
-            This site does not use tracking cookies, analytics pixels, or advertising scripts. Browsing is not profiled or
-            tracked across other sites.
+            When data is stored outside your jurisdiction, it is protected by appropriate safeguards such as standard
+            contractual clauses or equivalent mechanisms.
           </p>
         </section>
 
         <section>
-          <h2 className="font-semibold uppercase tracking-wide text-xs text-neutral-400">7. Contact</h2>
+          <h2 className="font-semibold uppercase tracking-wide text-xs text-neutral-400">7. Data Subject Rights</h2>
           <p>
-            Questions or data requests? Email <a className="text-purple-300 underline" href="mailto:thelowlifefiles@gmail.com">thelowlifefiles@gmail.com</a>.
+            Where applicable, you may request access, deletion, or restriction of your data, or lodge complaints with a
+            supervisory authority. Email <a className="text-purple-300 underline" href="mailto:thelowlifefiles@gmail.com">thelowlifefiles@gmail.com</a> to exercise these rights.
           </p>
         </section>
 
         <section>
-          <h2 className="font-semibold uppercase tracking-wide text-xs text-neutral-400">8. Updates</h2>
+          <h2 className="font-semibold uppercase tracking-wide text-xs text-neutral-400">8. Cookies & Tracking</h2>
           <p>
-            Policy updates will be posted here with a new “Last Updated” date. Continued use of the site means you accept the
-            latest version.
+            This site does not use tracking cookies, analytics frameworks, or advertising scripts. Only minimal session data
+            may be used for functionality and is not persisted or profiled.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="font-semibold uppercase tracking-wide text-xs text-neutral-400">9. Security Measures</h2>
+          <p>
+            Administrative, technical, and physical safeguards protect stored data, though no system is entirely immune to
+            threats. We strive to respond quickly to any incident.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="font-semibold uppercase tracking-wide text-xs text-neutral-400">10. Policy Updates</h2>
+          <p>
+            We may revise this policy. Changes will be reflected in the “Last Updated” date, and continued use signifies
+            acceptance.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="font-semibold uppercase tracking-wide text-xs text-neutral-400">11. Contact</h2>
+          <p>
+            Questions or lawful data requests? Email{" "}
+            <a className="text-purple-300 underline" href="mailto:thelowlifefiles@gmail.com">
+              thelowlifefiles@gmail.com
+            </a>
+            .
           </p>
         </section>
       </div>
