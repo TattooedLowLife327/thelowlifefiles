@@ -141,9 +141,6 @@ export default function Home() {
             <p className="text-[13px] leading-relaxed text-neutral-200 sm:text-sm mt-3 italic">
               Silence only protects bullies. This is Mae's way of reclaiming her narrative and ensuring the record reflects truth, not rumors.
             </p>
-            <p className="text-[12px] leading-relaxed text-neutral-400 sm:text-xs mt-3">
-              <strong>Privacy note:</strong> We log visitor IP addresses server-side to prevent abuse and document harassment incidents. These details are never shared publicly and are only used for security and evidence.
-            </p>
           </div>
         </div>
       </div>

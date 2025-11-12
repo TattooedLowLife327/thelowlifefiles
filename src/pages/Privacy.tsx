@@ -1,6 +1,16 @@
+import { Link } from "react-router-dom";
+
 export default function Privacy() {
   return (
     <section className="card p-5 sm:p-7 space-y-4">
+      <div className="flex justify-end">
+        <Link
+          to="/"
+          className="inline-flex items-center rounded-full border border-white/10 px-3 py-1 text-xs uppercase tracking-wide text-white hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-300"
+        >
+          Close ✕
+        </Link>
+      </div>
       <h1 className="text-2xl font-semibold">Privacy Policy</h1>
       <p className="text-sm text-neutral-400">Last Updated: November 12, 2025</p>
 
@@ -89,7 +99,21 @@ export default function Privacy() {
         </section>
 
         <section>
-          <h2 className="font-semibold uppercase tracking-wide text-xs text-neutral-400">11. Contact</h2>
+          <h2 className="font-semibold uppercase tracking-wide text-xs text-neutral-400">11. Evidence Collection &amp; Use</h2>
+          <p>
+            Evidence comes from three sources: (a) publicly accessible posts/streams (fair-use legitimate interest), (b)
+            direct communications involving TattooedLowLife, and (c) voluntary third-party submissions where the submitter
+            confirms lawful access. Every item is reviewed for authenticity, timestamps, and context before inclusion.
+          </p>
+          <p>
+            Personal contact details or unrelated identifiers are redacted, and visuals may be blurred to keep focus on the
+            documented behavior. Material is curated for accountability—republishing it for retaliation or harassment is
+            prohibited and may be referred to authorities.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="font-semibold uppercase tracking-wide text-xs text-neutral-400">12. Contact</h2>
           <p>
             Questions or lawful data requests? Email{" "}
             <a className="text-purple-300 underline" href="mailto:thelowlifefiles@gmail.com">
