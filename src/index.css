@@ -137,13 +137,6 @@ body {
   transform: translateY(-50%) rotate(5deg);
 }
 
-.cabinet-magnet-bottom-right {
-  bottom: 10px;
-  right: 10px;
-  width: 50px;
-  transform: rotate(-3deg);
-}
-
 .cabinet-drawer.interactive {
   cursor: pointer;
 }
@@ -323,13 +316,9 @@ body {
   transform-origin: 50% 0%;
   opacity: 0;
   pointer-events: none;
-  --card-transform-duration: 0.8s;
-  --card-transform-ease: cubic-bezier(0.25, 0.85, 0.35, 1);
-  --card-opacity-duration: 0.6s;
-  --card-opacity-ease: ease-out;
-  transition-property: transform, opacity;
-  transition-duration: var(--card-transform-duration, 0.8s), var(--card-opacity-duration, 0.6s);
-  transition-timing-function: var(--card-transform-ease, cubic-bezier(0.25, 0.85, 0.35, 1)), var(--card-opacity-ease, ease-out);
+  transition:
+    transform 0.9s cubic-bezier(0.23, 1, 0.32, 1),
+    opacity 0.6s ease-out;
   z-index: 0;
   color: #111;
   border-radius: 2px;
@@ -379,48 +368,37 @@ body {
 
 /* Opening animation: Paper rises UP and starts to expand */
 .overview-card.is-rise {
-  --card-transform-duration: 0.62s;
-  --card-transform-ease: cubic-bezier(0.24, 0.84, 0.34, 1);
-  transform: translate(-50%, -320px) scale(0.36);
+  transform: translate(-50%, -230px) scale(0.45);
   opacity: 1;
 }
 
 /* Opening animation: Paper continues up and fully expands */
 .overview-card.is-settle {
-  --card-transform-duration: 0.88s;
-  --card-transform-ease: cubic-bezier(0.18, 0.9, 0.24, 1.02);
-  transform: translate(-50%, -110px) scale(1);
+  transform: translate(-50%, -80px) scale(1);
   opacity: 1;
 }
 
 /* Closing animation: Paper starts shrinking */
 .overview-card.is-closing-up {
-  --card-transform-duration: 0.48s;
-  --card-transform-ease: cubic-bezier(0.32, 0.82, 0.48, 1);
-  transform: translate(-50%, -210px) scale(0.74);
+  transform: translate(-50%, -100px) scale(0.9);
   opacity: 1;
 }
 
 /* Closing animation: Paper shrinks and moves up */
 .overview-card.is-closing-shrink {
-  --card-transform-duration: 0.52s;
-  --card-transform-ease: cubic-bezier(0.28, 0.82, 0.46, 1);
-  --card-opacity-duration: 0.52s;
-  --card-opacity-ease: cubic-bezier(0.42, 0, 0.58, 1);
-  transform: translate(-50%, -340px) scale(0.38);
-  opacity: 0;
+  transform: translate(-50%, -230px) scale(0.45);
+  opacity: 1;
 }
 
 /* Closing animation: Paper drops back DOWN into drawer */
 .overview-card.is-closing-drop {
-  --card-transform-duration: 0.68s;
-  --card-transform-ease: cubic-bezier(0.6, 0.02, 0.8, 0.6);
-  --card-opacity-duration: 0.4s;
-  --card-opacity-ease: ease-in;
-  transform: translate(-50%, 110px) scale(0.34);
+  transform: translate(-50%, 120px) scale(0.4);
   opacity: 0;
   pointer-events: none;
   z-index: 1;
+  transition:
+    transform 0.9s cubic-bezier(0.6, 0.04, 0.8, 0.8),
+    opacity 0.9s ease-in;
 }
 
 

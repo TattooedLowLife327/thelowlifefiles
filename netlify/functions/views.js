@@ -1,3 +1,5 @@
+const { getStore } = require("@netlify/blobs");
+
 const respond = (views) => ({
   statusCode: 200,
   headers: {
@@ -8,9 +10,23 @@ const respond = (views) => ({
 });
 
 exports.handler = async () => {
-  // Just use the fallback count API for now
-  // Netlify Blobs requires additional setup
-  return fetchFallbackCount();
+  try {
+    const store = await getStore({
+      name: "view-counter",
+      local: process.env.NETLIFY_DEV === "true",
+      consistency: "strong",
+    });
+
+    const rawCount = await store.get("count");
+    const currentCount = Number.parseInt(rawCount ?? "0", 10) || 0;
+    const nextCount = currentCount + 1;
+
+    await store.set("count", String(nextCount));
+    return respond(nextCount);
+  } catch (error) {
+    console.error("Primary blob counter failed:", error.message);
+    return fetchFallbackCount();
+  }
 };
 
 async function fetchFallbackCount() {
