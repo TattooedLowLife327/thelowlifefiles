@@ -1,6 +1,16 @@
+import { Link } from "react-router-dom";
+
 export default function Contact() {
   return (
     <section className="card p-5 sm:p-7 space-y-4">
+      <div className="flex justify-end">
+        <Link
+          to="/"
+          className="inline-flex items-center rounded-full border border-white/10 px-3 py-1 text-xs uppercase tracking-wide text-white hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-300"
+        >
+          Close ✕
+        </Link>
+      </div>
       <h1 className="text-2xl font-semibold">Contact</h1>
       <p className="text-sm text-neutral-400">
         Need to report harassment, request a correction, or send supporting evidence? Use the channels below.
