@@ -1,3 +1,5 @@
+const { getStore } = require("@netlify/blobs");
+
 const respond = (views) => ({
   statusCode: 200,
   headers: {
@@ -9,14 +11,21 @@ const respond = (views) => ({
 
 exports.handler = async () => {
   try {
-    const res = await fetch("https://api.countapi.xyz/hit/lowlifefiles/visits");
-    if (!res.ok) throw new Error(`countapi responded ${res.status}`);
-    const data = await res.json();
-    if (typeof data.value === "number") {
-      return respond(data.value);
-    }
+    const store = await getStore({
+      name: "view-counter",
+      local: process.env.NETLIFY_DEV === "true",
+    });
+
+    const currentRaw = await store.get("count");
+    const current = Number.isFinite(Number(currentRaw))
+      ? Number(currentRaw)
+      : Number.parseInt(currentRaw ?? "0", 10) || 0;
+    const next = current + 1;
+
+    await store.set("count", String(next));
+    return respond(next);
   } catch (error) {
-    console.error("CountAPI request failed:", error.message);
+    console.error("View counter failed:", error);
+    return respond(0);
   }
-  return respond(0);
 };
