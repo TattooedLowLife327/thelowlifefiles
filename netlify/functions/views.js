@@ -14,6 +14,8 @@ export async function handler() {
     const store = await getStore({
       name: "view-counter",
       local: process.env.NETLIFY_DEV === "true",
+      siteID: process.env.NETLIFY_BLOBS_SITE_ID,
+      token: process.env.NETLIFY_BLOBS_TOKEN,
     });
 
     const currentRaw = await store.get("count");
