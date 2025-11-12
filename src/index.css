@@ -188,7 +188,7 @@ body {
 .cabinet-counter {
   position: absolute;
   top: 8px;
-  right: 68px;
+  right: 8px;
   width: auto;
   min-width: 65px;
   background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
@@ -407,4 +407,3 @@ body {
     transform 0.9s cubic-bezier(0.6, 0.04, 0.8, 0.8),
     opacity 0.9s ease-in;
 }
-
