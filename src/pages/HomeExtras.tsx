@@ -42,7 +42,16 @@ export default function HomeExtras() {
               onClick={() => openPage(page)}
               aria-pressed={selectedPage?.id === page.id}
             >
-              <img src={page.banner} alt={`${page.name} banner`} className="w-full h-20 object-cover rounded mb-2" />
+              <div
+                className="mb-2 w-full overflow-hidden rounded border border-white/10 bg-black/30 flex items-center justify-center"
+                style={{ aspectRatio: '8 / 3' }}
+              >
+                <img
+                  src={page.banner}
+                  alt={`${page.name} banner`}
+                  className="max-h-full max-w-full object-contain"
+                />
+              </div>
               <h2 className="text-base font-semibold">{page.name}</h2>
             </button>
           );

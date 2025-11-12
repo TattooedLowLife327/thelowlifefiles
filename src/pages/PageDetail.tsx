@@ -19,11 +19,14 @@ export default function PageDetail() {
     <section>
       <div className="mx-auto flex w-full max-w-5xl flex-col gap-3.5 sm:gap-5">
         {/* Page Header */}
-        <div className="overflow-hidden">
+        <div
+          className="overflow-hidden rounded-xl border border-white/10 bg-black/30 flex items-center justify-center"
+          style={{ aspectRatio: '21 / 7' }}
+        >
           <img
             src={page.banner}
             alt={`${page.name} banner`}
-            className="h-32 sm:h-48 md:h-56 lg:h-64 w-full object-cover"
+            className="max-h-full max-w-full object-contain"
           />
         </div>
 
