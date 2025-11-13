@@ -1,4 +1,4 @@
-import FileCabinetPreview from "../components/FileCabinetPreview";
+import FileCabinet from "../components/FileCabinet";
 
 export default function CabinetPreview() {
   return (
@@ -22,7 +22,7 @@ export default function CabinetPreview() {
       <main className="px-4 pt-6 pb-10">
         <div className="mx-auto max-w-5xl">
           <div className="relative flex w-full justify-center pb-12">
-            <FileCabinetPreview />
+            <FileCabinet />
           </div>
         </div>
       </main>
