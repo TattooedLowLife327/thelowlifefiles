@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Routes, Route, Link } from 'react-router-dom';
+import { Routes, Route, Link, useLocation } from 'react-router-dom';
 import Sidebar from './components/Sidebar';
 import Home from './pages/Home';
 import PageDetail from './pages/PageDetail';
@@ -12,12 +12,15 @@ import Privacy from './pages/Privacy';
 import Terms from './pages/Terms';
 import Contact from './pages/Contact';
 import Evidence from './pages/Evidence';
+import CabinetPreview from './pages/CabinetPreview';
 
 const DISCLAIMER =
   "Disclaimer: The quality - or lack there of - of the display images used below are not a direct creation of TattooedLowLife. She would never put something that low quality out into the world.. but then again, the image quality is a direct representation of the quality of tournaments they put on.";
 
 export default function App() {
   const [open, setOpen] = useState(false);
+  const location = useLocation();
+  const isCabinetPreview = location.pathname === '/cabinet-preview';
 
   return (
     <div className="min-h-screen bg-ink text-white">
@@ -41,13 +44,14 @@ export default function App() {
       </Routes>
 
       {/* Sidebar */}
-      <Sidebar open={open} setOpen={setOpen} />
+      {!isCabinetPreview && <Sidebar open={open} setOpen={setOpen} />}
 
       {/* Main Content (mobile-first) */}
-      <main className="safe px-4 pt-6 pb-10 lg:pl-[260px]">
+      <main className={isCabinetPreview ? "" : "safe px-4 pt-6 pb-10 lg:pl-[260px]"}>
         <div className="mx-auto max-w-5xl grid gap-4">
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/cabinet-preview" element={<CabinetPreview />} />
             <Route path="/timeline" element={<Timeline />} />
             <Route path="/videos" element={<Videos />} />
             <Route path="/screenshots" element={<Screenshots />} />
@@ -62,7 +66,7 @@ export default function App() {
         </div>
       </main>
 
-      <footer className="safe border-t border-white/10 px-4 py-6 text-xs sm:text-sm text-neutral-400 lg:pl-[260px]">
+      <footer className={isCabinetPreview ? "border-t border-white/10 px-4 py-6 text-xs sm:text-sm text-neutral-400" : "safe border-t border-white/10 px-4 py-6 text-xs sm:text-sm text-neutral-400 lg:pl-[260px]"}>
         <div className="mx-auto flex max-w-5xl flex-col items-center gap-3 text-center">
           <div className="flex flex-wrap justify-center gap-3 text-purple-200">
             <Link className="hover:text-white transition" to="/terms">Terms</Link>
