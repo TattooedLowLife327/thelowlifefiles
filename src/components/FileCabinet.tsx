@@ -296,8 +296,8 @@ export default function FileCabinetPreview() {
                       y: 50,
                       x: getTransform(file.position),
                       transition: {
-                        delay: getExitOrder(file.row, file.position) * 0.05,
-                        duration: 0.15,
+                        delay: getExitOrder(file.row, file.position) * 0.03,
+                        duration: 0.12,
                         ease: "easeIn",
                       }
                     }}
@@ -322,7 +322,12 @@ export default function FileCabinetPreview() {
           aria-expanded={topOpen}
           onClick={handleTopClick}
           onKeyDown={handleTopKeyDown}
-          style={{ zIndex: 150 }}
+          style={{
+            transition: topOpen
+              ? 'transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.5s cubic-bezier(0.22, 1, 0.36, 1), background-size 0.5s cubic-bezier(0.22, 1, 0.36, 1)'
+              : 'all 0.5s cubic-bezier(0.22, 1, 0.36, 1) 0.4s',
+            zIndex: 150
+          }}
         >
           <img
             src="/ttlllogo.png"
@@ -420,8 +425,8 @@ export default function FileCabinetPreview() {
                       y: 50,
                       x: getTransform(file.position),
                       transition: {
-                        delay: getExitOrder(file.row, file.position) * 0.05,
-                        duration: 0.15,
+                        delay: getExitOrder(file.row, file.position) * 0.03,
+                        duration: 0.12,
                         ease: "easeIn",
                       }
                     }}
@@ -443,7 +448,12 @@ export default function FileCabinetPreview() {
           role="button"
           tabIndex={0}
           onClick={handleBottomClick}
-          style={{ zIndex: 200 }}
+          style={{
+            transition: bottomOpen
+              ? 'transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.5s cubic-bezier(0.22, 1, 0.36, 1), background-size 0.5s cubic-bezier(0.22, 1, 0.36, 1)'
+              : 'all 0.5s cubic-bezier(0.22, 1, 0.36, 1) 0.4s',
+            zIndex: 200
+          }}
         >
           <button
             type="button"
