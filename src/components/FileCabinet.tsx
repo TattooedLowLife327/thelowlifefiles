@@ -274,11 +274,11 @@ export default function FileCabinetPreview() {
                     transition={{
                       y: {
                         delay: (topEntranceComplete || isSelected) ? 0 : 0.3 + (getEnterOrder(file.row, file.position) * 0.08),
-                        duration: (topEntranceComplete || isSelected) ? 0 : 0.3,
+                        duration: (topEntranceComplete || isSelected) ? 0.2 : 0.3,
                         ease: "easeOut"
                       },
                       x: {
-                        delay: 0.3 + (getEnterOrder(file.row, file.position) * 0.08),
+                        delay: topEntranceComplete ? 0 : 0.3 + (getEnterOrder(file.row, file.position) * 0.08),
                         duration: 0.3,
                         ease: "easeOut"
                       }
@@ -290,7 +290,7 @@ export default function FileCabinetPreview() {
                     }}
                     whileHover={{
                       y: -5,
-                      transition: { duration: 0 }
+                      transition: { duration: 0.2, ease: "easeOut" }
                     }}
                     exit={{
                       y: 50,
@@ -322,7 +322,7 @@ export default function FileCabinetPreview() {
           aria-expanded={topOpen}
           onClick={handleTopClick}
           onKeyDown={handleTopKeyDown}
-          style={{ transition: topOpen ? 'none' : 'all 0.3s ease 0.6s', zIndex: 150 }}
+          style={{ zIndex: 150 }}
         >
           <img
             src="/ttlllogo.png"
@@ -398,11 +398,11 @@ export default function FileCabinetPreview() {
                     transition={{
                       y: {
                         delay: (bottomEntranceComplete || isSelected) ? 0 : 0.3 + (getEnterOrder(file.row, file.position) * 0.08),
-                        duration: (bottomEntranceComplete || isSelected) ? 0 : 0.3,
+                        duration: (bottomEntranceComplete || isSelected) ? 0.2 : 0.3,
                         ease: "easeOut"
                       },
                       x: {
-                        delay: 0.3 + (getEnterOrder(file.row, file.position) * 0.08),
+                        delay: bottomEntranceComplete ? 0 : 0.3 + (getEnterOrder(file.row, file.position) * 0.08),
                         duration: 0.3,
                         ease: "easeOut"
                       }
@@ -414,7 +414,7 @@ export default function FileCabinetPreview() {
                     }}
                     whileHover={{
                       y: -5,
-                      transition: { duration: 0 }
+                      transition: { duration: 0.2, ease: "easeOut" }
                     }}
                     exit={{
                       y: 50,
@@ -443,7 +443,7 @@ export default function FileCabinetPreview() {
           role="button"
           tabIndex={0}
           onClick={handleBottomClick}
-          style={{ transition: bottomOpen ? 'none' : 'all 0.3s ease 0.6s', zIndex: 200 }}
+          style={{ zIndex: 200 }}
         >
           <button
             type="button"
